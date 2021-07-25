@@ -1,0 +1,29 @@
+.mat-raised-button.mat-success {
+    color: #f0fff3;
+    background-color: #0f992f;
+}
+.mat-raised-button.mat-success:hover{
+  background-color: #155724;
+}
+.mat-button.mat-success,
+.mat-stroked-button.mat-success {
+    color: #155724;
+}
+.mat-success {
+    background-color: #0f992f;
+}
+.plus-btn {
+    width: 24px!important;
+    height: 24px!important;
+    font-size: 12px;
+
+    span {
+        font-size: 12px;
+    }
+}
+mat-dialog-container {
+    min-width: 400px;
+}
+.full-width {
+    width: 100%;
+}

@@ -1,0 +1,47 @@
+<a href="/management" mat-button color="basic" class="btn come-back-btn">
+    <button pButton pRipple type="button"
+    icon="pi pi-angle-left" class="p-button-rounded "></button>
+    Go Back</a>
+<form #f="ngForm" class="card">
+    <div class="form-group">
+        <label class="full-width">Question Text</label>
+        <input pInputText type="text" class="full-width" name="text" [(ngModel)]="model.text" (ngModelChange)="clear()" required />
+        <span class="error" *ngIf="errors.text">{{errors.text}}</span>
+    </div>
+    <div class="form-group">
+        <label class="full-width">Question Type</label>
+        <div class="radio-btn-container">
+            <div class="p-field-radiobutton">
+                <p-radioButton name="type" value="1" [(ngModel)]="model.type"  (ngModelChange)="clear()" inputId="type1"></p-radioButton>
+                <label for="type1">Single</label>
+            </div>
+            <div class="p-field-radiobutton">
+                <p-radioButton name="type" value="2" [(ngModel)]="model.type" (ngModelChange)="clear()" inputId="type2"></p-radioButton>
+                <label for="type2">Multi</label>
+            </div>
+            <div class="p-field-radiobutton">
+                <p-radioButton name="type" value="3" [(ngModel)]="model.type" (ngModelChange)="clear()"  inputId="type3"></p-radioButton>
+                <label for="type3">Open</label>
+            </div>
+        </div>
+        <span class="error" *ngIf="errors.type">{{errors.type}}</span>
+    </div>
+    <div class="form-group " *ngIf="model.type == questionType.Single || model.type == questionType.Multi">
+        <label>
+            Answers:
+            <button pButton pRipple type="button" (click)="openAnswerDialog()" icon="pi pi-plus"
+                class="p-button-rounded p-button-success plus-btn">
+            </button>
+        </label>
+        <div  class="answer-wrapper" *ngFor="let answer of answers;let i = index">
+            <div  class="answers-container" >
+                <p-button>{{answer.value}}</p-button>
+                <button pButton pRipple type="button" (click)="deleteAnswer(i)"
+                        icon="pi pi-times" class="p-button-rounded p-button-danger"></button>
+            </div>          
+        </div>
+        <span class="error" *ngIf="errors.answers">{{errors.answers}}</span>
+    </div>    
+    <button *ngIf="model.id" pButton pRipple type="button" label="Update" (click)="update()" class="save-btn"></button>
+    <button *ngIf="!model.id" pButton pRipple type="button" label="Add"   (click)="add()" class="save-btn p-button-success"></button>
+</form>

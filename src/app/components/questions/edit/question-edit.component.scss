@@ -1,0 +1,55 @@
+.form-group {
+    padding: 15px;
+   
+}
+.radio-btn-container {
+    display: flex;
+    flex-direction: row;
+    
+    label {
+        margin-right: 5px;
+    }
+    .p-field-radiobutton {
+        align-items: baseline;
+    }
+}
+fa-icon {
+    background: green;
+    padding: 0 5px 0;
+    cursor: pointer;
+}
+.answers-container {    
+    position: relative;    
+    width: fit-content;
+    float: left;
+
+    p-button {
+        margin-right: 10px;
+    }
+
+    .p-button-danger {
+        position: absolute;
+        width: 17px;
+        height: 9px;
+        right: 0;
+        top: -5px;
+        ::ng-deep {
+            .pi-times {
+                font-size: 6px;
+            }
+        }    
+    }
+}
+.answer-wrapper {
+    margin-top:10px
+}
+.save-btn {
+    width: 100px;
+    margin: 10px auto;
+}
+.error {
+    color:red;    
+}
+.come-back-btn {
+    margin-bottom: 10px;
+}

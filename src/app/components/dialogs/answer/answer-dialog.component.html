@@ -1,0 +1,8 @@
+<mat-dialog-content class="mat-typography">
+    <label class="full-width">Enter Answer</label>
+    <input pInputText class="full-width" type="text" name="answer" [(ngModel)]="data.answer" required />
+</mat-dialog-content>
+<mat-dialog-actions >
+    <button pButton pRipple type="button" label="Cancel" mat-dialog-close class="p-button-danger"></button>
+    <button pButton pRipple type="button" label="Add"  [mat-dialog-close]="data.answer" class="p-button-success"></button>
+</mat-dialog-actions>

@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-start container-lg">
+  <p-table [value]="questions">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Question</th>
+        <th>Type</th>
+        <th>Created Date</th>
+        <th> <a href="/edit" mat-raised-button color="success">Add New One</a></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-question>
+      <tr>
+        <td>{{question.text}}</td>
+        <td>{{question.type | displayEnum }}</td>
+        <td>{{question.created | date:'medium'}}</td>
+        <td>
+          <a href="{{'/edit/' + question.id}}" mat-raised-button color="primary" class="btn">Edit</a>
+          <button mat-raised-button color="warn" (click)="deleteQuestion(question)" class="btn">Delete</button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
